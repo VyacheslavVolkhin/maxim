@@ -14,3 +14,222 @@
 \* ----------------------------------- */
 //@import 'icons.less';
 //@import 'animate.less';
+
+
+/* form */
+.content-form-box {
+	margin-bottom: 24px;
+	.box-inner-wrap {
+		border: 1px solid var(--clr-att);
+		padding: 19px 14px;
+		background: #fff;
+		box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.02), 0px 41.778px 33.422px 0px rgba(0, 0, 0, 0.01), 0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.01), 0px 12.522px 10.017px 0px rgba(0, 0, 0, 0.01), 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.01), 0px 2.767px 2.214px 0px rgba(0, 0, 0, 0.01);
+		border-radius: 24px;
+	}
+	.title-inner-wrap {
+		text-align: center;
+		margin-bottom: 15px;
+		font-size: 16px;
+		line-height: 1.35;
+		padding: 0 30px;
+		letter-spacing: normal;
+	}
+	.frm-row-submit,
+	.frm-row {
+		margin: 0 -5px;
+	}
+	.frm-row-submit {
+		padding-top: 10px;
+		.field-submit {
+			margin-bottom: 0;
+		}
+		.frm-select {
+			margin-left: 50px;
+			color: #868686;
+			label {
+				&:after {
+					filter: brightness(0) grayscale(1);;
+				}
+				&:before {
+					border-color: #EEE;
+				}
+			}
+		}
+		.btn {
+			width: 100%;
+			height: 58px;
+			border-radius: 30px;
+			font-size: 13px;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+	}
+	.frm-field {
+		padding: 0 5px;
+		margin-bottom: 10px;
+	}
+	.row-select {
+		margin-bottom: 5px;
+	}
+	.h1-title {
+		font-size: 24px;
+		line-height: 1.35;
+		font-weight: bold;
+		margin: 0;
+		hyphens: none;
+		letter-spacing: normal;
+		.ftitle;
+	}
+}
+.frm-field-input {
+	display: block;
+	position: relative;
+	.frm-ico {
+		width: 24px;height: 24px;
+		position: absolute;
+		top: 50%;left: 15px;
+		margin-top: -12px;
+		z-index: 2;
+		pointer-events: none;
+		&~input {
+			padding-left: 48px;
+		}
+	}
+}
+.frm-select-toggle {
+	position: relative;
+	display: block;
+	overflow: hidden;
+    line-height: 1;
+	width: 100%;
+	input {
+		display: block;
+		position: absolute;
+		top: 0;left: 0;
+		width: 0;height: 0;
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+		&:checked {
+			&~label {
+				&:after {
+					margin-left: 2px;
+				}
+			}
+		}
+	}
+	label {
+		display: flex;
+		align-items: center;
+		position: relative;
+		min-height: 30px;
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: absolute;
+			top: 50%;left: 50%;
+			width: 60px;height: 30px;
+			margin: -15px 0 0 -30px;
+			border-radius: 15px;
+			border: 1px solid #EEE;
+			background: #FBFBFB;
+			transition: all ease 0.2s;
+			cursor: pointer;
+        }
+		&:after {
+			width: 24px;height: 24px;
+			border-radius: 12px;
+			background: #F17B1B;
+			margin: -12px 0 0 -26px;
+		}
+	}
+	.lbl-title {
+		width: 50%;
+		padding: 0 40px 0 0;
+		font-size: 16px;
+		line-height: 20px;
+		display: block;
+		&:first-child {
+			text-align: right;
+		}
+		&:last-child {
+			padding: 0 0 0 40px;
+		}
+	}
+}
+@media (min-width: 640px) {
+	.content-form-box {
+		.field-half {
+			width: 50%;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.content-form-box {
+		margin-bottom: 33px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1176px;
+		.box-inner-wrap {
+			padding: 3.9rem;
+			display: flex;
+		}
+		.form-inner-wrap {
+			flex: 1;
+			padding: 0;
+			margin: 0;
+			width: calc(100% - 46.6rem);
+		}
+		.title-inner-wrap {
+			padding: 0 2rem 0 0;
+			width: 46.6rem;
+			font-size: 2rem;
+			text-align: left;
+			margin: 0;
+		}
+		.h1-title {
+			font-size: 4.2rem;
+			margin-bottom: 4px;
+		}
+		.frm-field {
+			margin-bottom: 30px;
+		}
+		.row-select {
+			margin-bottom: 0;
+		}
+		.frm-row-submit {
+			padding-top: 0;
+			.frm-field {
+				margin-bottom: 0;
+				width: 40%;
+			}
+			.field-submit {
+				width: 60%;
+			}
+			.frm-select {
+				margin: 0;
+			}
+		}
+	}
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+	.content-form-box {
+		.field-half {
+			width: 100%;
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 30px;
+			}
+		}
+		.frm-row-submit {
+			.field-info {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			.field-submit {
+				width: 100%;
+			}
+		}
+	}
+}
+/* end form */
