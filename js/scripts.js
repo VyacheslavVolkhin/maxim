@@ -412,5 +412,58 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+
+
 })
 
+
+//select toggle content visibility
+document.addEventListener("DOMContentLoaded", function () {
+	const inputsSelect = document.querySelectorAll(
+	  "input[data-content], input[data-content-check], input[data-content-uncheck]"
+	);
+  
+	inputsSelect.forEach(function (input) {
+	  toggleContent(input);
+	  });
+  
+	inputsSelect.forEach((input) => {
+	  input.addEventListener("click", function () {
+		document.querySelectorAll(".frm-content").forEach((content) => {
+		  content.classList.remove("active");
+			  });
+  
+		inputsSelect.forEach(toggleContent);
+		  });
+	  });
+  
+	document.querySelectorAll(".btn[data-content]").forEach((button) => {
+	  button.addEventListener("click", function () {
+		let dataContent = this.getAttribute("data-content");
+		this.disabled = true;
+		document
+		  .querySelectorAll('.frm-content[data-content="' + dataContent + '"]')
+		  .forEach((content) => {
+			content.classList.add("active");
+			  });
+		return false;
+		  });
+	  });
+  
+	function toggleContent(input) {
+	  let selectContent;
+	  if (input.checked) {
+		selectContent =
+		  input.getAttribute("data-content-check") ||
+		  input.getAttribute("data-content");
+		  } else {
+		selectContent = input.getAttribute("data-content-uncheck");
+		  }
+		  console.log(selectContent)
+	  document
+		.querySelectorAll('.frm-content[data-content="' + selectContent + '"]')
+		.forEach((content) => {
+		  content.classList.add("active");
+		  });
+	  }
+  });

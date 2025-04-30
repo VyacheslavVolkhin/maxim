@@ -68,7 +68,7 @@
 							<div class="frm-row row-select">
 								<div class="frm-field">
 									<div class="frm-select-toggle">
-										<input type="checkbox" id="select">
+										<input type="checkbox" id="select" data-content-check="frmselect01" data-content-uncheck="frmselect02">
 										<label for="select">
 											<div class="lbl-title">
 												<span class="elm-hidden-mobile">Как физическое лицо</span>
@@ -83,12 +83,20 @@
 								</div>
 							</div>
 							<div class="frm-row">
-								<div class="frm-field field-half">
+								<div class="frm-field field-half frm-content active" data-content="frmselect02">
 									<div class="frm-field-input">
 										<div class="frm-ico">
 											<img src="./img/icons/frm-user.svg" alt="">
 										</div>
 										<input type="text" class="form-input" placeholder="Имя">
+									</div>
+								</div>
+								<div class="frm-field field-half frm-content" data-content="frmselect01">
+									<div class="frm-field-input">
+										<div class="frm-ico">
+											<img src="./img/icons/frm-bank.svg" alt="">
+										</div>
+										<input type="text" class="form-input" placeholder="Компания">
 									</div>
 								</div>
 								<div class="frm-field field-half">

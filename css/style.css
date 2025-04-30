@@ -5407,6 +5407,9 @@ input.form-clear-autofill::-webkit-contacts-auto-fill-button {
 .content-form-box .h1-title * {
   font-family: 'Avenir Next Cyr', sans-serif;
 }
+.content-form-box .frm-content:not(.active) {
+  display: none;
+}
 .frm-field-input {
   display: block;
   position: relative;
